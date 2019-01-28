@@ -52,10 +52,20 @@ module.exports = {
       families: ['Lato:400,700'] // Loads Lato font with weights 400 and 700
     }
   },
+  purgeCSS: {
+    mode: 'postcss'
+  },
   /*
   ** Build configuration
   */
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: './tailwind.js',
+        autoprefixer: {}
+      }
+    },    
+    // extractCSS: true,
     /*
     ** You can extend webpack config here
     */
