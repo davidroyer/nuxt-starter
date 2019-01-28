@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const typographyConfig = require('./config/typography')
 
 module.exports = {
   mode: 'universal',
@@ -61,10 +62,11 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
-        tailwindcss: './tailwind.js',
-        autoprefixer: {}
+        'postcss-typography': typographyConfig,
+        autoprefixer: {},
+        tailwindcss: './tailwind.js'
       }
-    },    
+    },
     // extractCSS: true,
     /*
     ** You can extend webpack config here
